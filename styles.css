@@ -173,6 +173,18 @@ a {
   top: 0.75rem;
   border-radius: 0.5rem;
 }
+/*Hide content initially */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+/* When visible */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* CONTAINER (required) */
 .container {
