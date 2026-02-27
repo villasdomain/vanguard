@@ -1,161 +1,551 @@
-/* CSS BY YOUR NAME */
+/* CSS BY John Villaverde */
 
-/* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORTED FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-    line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-    quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* ROOT VARIABLES */
 :root {
-    --blue: #007BFF;
-    --red: #FF4500;
-    --white: #EAEAEA;
-    --black: #000000;
-    --charcoal: #333333;
-    --font: "Inter", sans-serif;
+  --blue: #007bff;
+  --red: #ff4500;
+  --white: #eaeaea;
+  --black: #000000;
+  --charcoal: #333333;
+  --font: "Inter", sans-serif;
 }
 
-/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
+/* GLOBAL STYLES (mobile first/small) */
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+html {
+  min-width: 400px;
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 1rem;
-    overflow: hidden;
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 1rem;
+  z-index: 999;
+}
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* CONTAINER (required) */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER + NAV */
+.site-header {
+  background: #0b0b0b;
+  border-bottom: 1px solid rgba(234, 234, 234, 0.15);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+  padding-left: 4.25rem; /* room for SVG logo */
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+.site-title::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.75rem;
+  height: 3.75rem;
+  background: url("images/vanguard-logo.svg") no-repeat center / contain;
+  animation: floatLogo 3s ease-in-out infinite;
 }
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-6px);
+  }
+  100% {
+    transform: translateY(-50%) translateY(0);
+  }
+}
+
+/* MOBILE MENU */
+.menu-btn {
+  background: transparent;
+  border: 1px solid rgba(234, 234, 234, 0.25);
+  color: var(--white);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.menu-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(234, 234, 234, 0.5);
+}
+
+.menu-icon {
+  width: 1.1rem;
+  height: 0.1rem;
+  background: var(--white);
+  position: relative;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1.1rem;
+  height: 0.1rem;
+  background: var(--white);
+}
+.menu-icon::before {
+  top: -0.35rem;
+}
+.menu-icon::after {
+  top: 0.35rem;
+}
+
+.site-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  background: #0b0b0b;
+  border-bottom: 1px solid rgba(234, 234, 234, 0.15);
+  display: none;
+}
+.site-nav.is-open {
+  display: block;
+}
+.site-nav ul {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+}
+.site-nav a {
+  display: block;
+  padding: 0.9rem 5%;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.site-nav a:hover {
+  background: rgba(234, 234, 234, 0.08);
+  transform: translateX(2px);
+}
+
+/* HERO */
+/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("images/vanguard-hero.jpg") no-repeat center / cover;
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-text {
+  max-width: 58ch;
+  margin: 0 auto 1.25rem;
+  opacity: 0.92;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(234, 234, 234, 0.3);
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background: rgba(234, 234, 234, 0.1);
+}
+.btn-solid {
+  background: var(--blue);
+  border-color: transparent;
+}
+.btn-solid:hover {
+  background: #0a66d6;
+}
+
+/* SECTIONS */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.about p,
+.services p,
+.results p,
+.contact p {
+  opacity: 0.92;
+  line-height: 1.6;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: rgba(234, 234, 234, 0.06);
+  border: 1px solid rgba(234, 234, 234, 0.12);
+  border-radius: 1.1rem;
+  padding: 1rem;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(234, 234, 234, 0.25);
+}
+.card h3 {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+/* RESULTS */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.results-table table {
+  width: 100%;
+  background: rgba(234, 234, 234, 0.06);
+  border: 1px solid rgba(234, 234, 234, 0.12);
+  border-radius: 1.1rem;
+  overflow: hidden;
+}
+.results-table caption {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-weight: 700;
+}
+.results-table th,
+.results-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(234, 234, 234, 0.1);
+}
+.results-table thead th {
+  background: rgba(234, 234, 234, 0.08);
+  font-weight: 700;
+}
+
+.chart-title {
+  font-weight: 700;
+  margin: 0.5rem 0 0.75rem;
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: flex-end;
-    justify-content: space-around;
-    gap: 1rem;
-    height: 300px;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  position: relative;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
-    width: 50px;
-    background: var(--charcoal);
-    border-radius: 10px;
-    position: relative;
-    transition: ;
-    height: 0;
+  width: 50px;
+  background: var(--charcoal);
+  border-radius: 10px;
+  position: relative;
+  transition: height 0.8s ease-in-out;
+  height: 0;
 }
+
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--white);
+  content: attr(data-year);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
 }
+
 @keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--height);
+  }
 }
+
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
 .bar {
-    animation: stepUp 1s ease-in-out forwards;
+  animation: stepUp 1s ease-in-out forwards;
 }
 
+/* FORM */
+.contact-form {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 2rem;
+}
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(234, 234, 234, 0.18);
+  background: rgba(234, 234, 234, 0.06);
+  color: var(--white);
+  outline: none;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(0, 123, 255, 0.8);
+  transform: translateY(-1px);
+}
 
-/* MEDIA QUERIES (MEDIUM) */ 
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid rgba(234, 234, 234, 0.15);
+  padding: 1.25rem 0 2rem;
+}
+.footer-inner p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
 
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
+/* MEDIA QUERY (medium) */
+@media (min-width: 800px) {
+  .menu-btn {
+    display: none;
+  }
 
+  .site-nav {
+    position: static;
+    display: block;
+    border: 0;
+  }
+  .site-nav ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+  .site-nav a {
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.75rem;
+  }
 
-/* MEDIA QUERIES (LARGE) */
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .results-container {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .results-table {
+    width: 50%;
+  }
+  .chart-wrap {
+    width: 50%;
+  }
+}
+
+/* MEDIA QUERY (large) */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
